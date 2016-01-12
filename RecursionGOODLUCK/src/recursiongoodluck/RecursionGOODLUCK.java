@@ -18,7 +18,7 @@ public class RecursionGOODLUCK {
     
     //  5+4+3+2+1+0; 7+6+5+4+3+2+1+0; 1+0; 2+1+0;
     
-    //  3 + 2 + 1
+    //  3 + 2 + 1 + 0
     public static int Summation(int n) {
         //  Base case: WE ARE AT THE END
         if (n <= 0) {
