@@ -1,7 +1,7 @@
 
 package animal;
 
-public class Animal {
+public abstract class Animal {
     
     private int age; //  VS private in age;
     
@@ -10,8 +10,10 @@ public class Animal {
         System.out.println("An animal has been created!");
     }
 
-    public void eat() {
-        System.out.println("An animal is eating");
+    public abstract void eat();
+    
+    public void sleep() {
+        System.out.println("An animal is sleeping");
     }
     
     public int getAge() {
@@ -20,22 +22,30 @@ public class Animal {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        Animal a = new Animal(5);
         Dog d = new Dog();
         Cat c = new Cat();
-        d.ruff();
-        System.out.println(d.getAge());
-        c.meow();
-        System.out.println(c.getAge());
-        a.eat();
         d.eat();
         c.eat();
-        d.run();
-        c.prance();
+        d.sleep();
+        c.sleep();
         
-        //  What happens if...
-        //Dog o = new Animal(); //  Illegal!
-        //Animal o = new Dog(); //  Valid, but only Animal methods available
+
+        //  Casting
+        Object dog = new Dog();
+        Dog realDog = (Dog) dog;
+        realDog.ruff();
+        
+        Object str = "est";
+        String realS = (String) str;
+        realS.getBytes();
+        
+        //  What happens when...
+        Dog doggy = new Dog();
+        if (doggy instanceof Animal) {
+            Animal animal = (Animal) doggy;
+            animal.sleep();
+        }
+        doggy.sleep();
     }
     
 }

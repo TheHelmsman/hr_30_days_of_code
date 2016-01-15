@@ -1,6 +1,8 @@
 package librarycatalogue;
 
 import java.util.HashMap;
+//  import pkg1.pkg2.----.pkgN.class;
+//  import pkg1.pkg2.----.pkgN.*;
 import java.util.Map;
 
 public class LibraryCatalogue {

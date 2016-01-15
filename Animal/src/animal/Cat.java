@@ -8,6 +8,16 @@ public class Cat extends Animal {
         System.out.println("A cat has beed created");
     }
     
+    public void eat() {
+        System.out.println("A cat is eating");
+    }
+    
+    //  public abstract eat();
+    
+    public void sleep() {
+        System.out.println("A cat is sleeping");
+    }
+    
     public void meow() {
         System.out.println("A cat has meows!");
     }
