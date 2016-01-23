@@ -5,28 +5,13 @@ import java.util.Arrays;
 
 public class ArrayPractice {
 
-    public static void printArray(int[] array) {
-        System.out.print("[");
-        for (int i=0; i< array.length; i++) {
-            int item = array[i];
-            System.out.print(item);
-            if (i < array.length - 1) {
-                System.out.print(", ");
-            }
+    //  public static <E, T> E[] printArray(E[] array, T b) {
+    public static <E> void printArray(E[] array) {
+        for(E element : array) {
+            System.out.print(element + " ");
         }
-        System.out.println("]");
-    }
-    
-    public static void printArray(String[] array) {
-        System.out.print("[");
-        for (int i=0; i< array.length; i++) {
-            String item = array[i];
-            System.out.print(item);
-            if (i < array.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println("]");
+        System.out.println();
+        //  return array;
     }
     
     public static void main(String[] args) {
@@ -42,10 +27,10 @@ public class ArrayPractice {
         //  Array: ["bob", "bobby", "max"] --> length 3
         
         //  Declaring, Allocating and Initializing
-        int[] intArray1;
-        int[] intArray2 = new int[4];
+        Integer[] intArray1;
+        Integer[] intArray2 = new Integer[4];
         printArray(intArray2);
-        int[] intArray3 = {5, 2, 9, 1, 3};
+        Integer[] intArray3 = {5, 2, 9, 1, 3};
         
         String[] shoppingList = {"bananas", "apples", "pears"};
         

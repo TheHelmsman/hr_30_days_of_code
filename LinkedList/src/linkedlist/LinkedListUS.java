@@ -3,10 +3,10 @@ package linkedlist;
 
 import java.util.LinkedList;
 
-public class LinkedListUS {
+public class LinkedListUS<D> {
 
     //  Properties
-    Node head;
+    Node<D> head;
     int count;
     
     //  Constructors
@@ -15,7 +15,7 @@ public class LinkedListUS {
         count = 0;
     }
     
-    public LinkedListUS(Node newHead) {
+    public LinkedListUS(Node<D> newHead) {
         head = newHead;
         count = 1;
     }
@@ -23,9 +23,9 @@ public class LinkedListUS {
     //  Methods
     
     //  add
-    public void add(int newData) {
-        Node temp = new Node(newData);
-        Node current = head;
+    public void add(D newData) {
+        Node<D> temp = new Node(newData);
+        Node<D> current = head;
         //  TODO Potential problem with list = 0
         while(current.getNext() != null) {
             current = current.getNext();
@@ -35,11 +35,11 @@ public class LinkedListUS {
     }
     
     //  get
-    public int get(int index) {
+    public D get(int index) {
         if(index <= 0) {
-            return -1;
+            throw new IllegalArgumentException("index should be non-negative");
         }
-        Node current = head;
+        Node<D> current = head;
         for (int i=1; i < index; i++) {
             current = current.getNext();
         }
@@ -59,7 +59,7 @@ public class LinkedListUS {
     //  remove
     public void remove() {
         //  remove from the back of the list
-        Node current = head;
+        Node<D> current = head;
         //  TODO Potential problem when list is 0 or 1;
         while(current.getNext().getNext() != null) {
             current = current.getNext();
@@ -70,7 +70,7 @@ public class LinkedListUS {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        LinkedList<String> linkedlist = new LinkedList<String>();
+        LinkedList<String> linkedlist = new LinkedList<>();
         linkedlist.add("Alice");
         System.out.println(linkedlist);
         linkedlist.add("Alicey");
