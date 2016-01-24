@@ -24,7 +24,7 @@ class NonEmptyBST<D extends Comparable> implements Tree<D> {
             return true;
         } else {
             if (elt.compareTo(data) < 1) {
-                return left.memeber(elt);
+                return left.member(elt);
             } else {
                 return right.member(elt);
             }
